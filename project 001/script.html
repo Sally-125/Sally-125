@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Javascript</title>
+    <!--(OPERATORS)-->
+
+    <!--<script language="Javascript">
+       var n1, n2, add, sub;
+        n1 = parseInt(window.prompt("Enter n1 value"));
+        n2 = parseInt(window.prompt("Enter n2 value"));
+        add = n1 + n2;
+        sub = n2 - n1;
+        document.writeln("Addition is" + add);
+        document.writeln("Subtraction is" + sub); 
+        </script>
+
+
+   //CONDITIONAL STATEMENTS
+
+    <script language="Javascript">
+        var n1, n2, n3;
+        n1 = parseInt(window.prompt("Enter n1value"));
+        n2 = parseInt(window.prompt("Enter n2value"));
+        n3 = parseInt(window.prompt("Enter n3value"));
+        if (n1 > n2 && n1 > n3) {
+            document.writeln("maximum is" + n1);
+        }
+        else if (n2 > n1 && n2 > n3) {
+            document.writeln("maximum is" + n2);
+        }
+        else {
+            document.writeln("maximum is" + n3);
+        }
+    </script>
+   
+
+    //FACTORIAL OF A GIVEN number
+
+    <script language="Javascript">
+        var n, i, fact = 1;
+        n = parseFloat(window.prompt("Enter a number"));
+        if (n == 0) {
+            document.writeln("Factorial is 1");
+        }
+        else {
+            for (i = 1; i <= n; i++) {
+                fact = fact * i;
+            }
+            document.writeln("factorial is" + fact);
+        }
+    </script>
+    
+     //FUNCTIONS
+
+    <script language="javascript">
+        var a;
+        a = parseInt(window.prompt("Enter a number:"));
+        document.writeln("Square of given number is" + square(a));
+        document.writeln("cube of given number is" + cube(a));
+        function square(k) {
+            var s;
+            s = k * k;
+            return s;
+        }
+        function cube(k) {
+            var c;
+            c = k * k * k;
+            return c;
+        } 
+    </script>
+    
+    <script language="javascript">
+        
+        var students = new Array("Ravi", "Mohan", "Kiran");
+        students.push("sella");
+        students.pop("Mohan");
+        document.writeln("The names are:" + students);
+    </script>
+    //TO FIND PRIME NUMBERS BTN 0 AND N
+    //LET N BE THE INPUT
+    <script language="javascript">
+        var n, count, i, j;
+        n = parseInt(window.prompt("Enter a value"));
+        document.write("Prime numbers are:");
+        for (i = 1; i <= n; i++) {
+            count = 0;
+            for (j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count++;
+                }
+            }
+            if (count == 2) {
+
+                document.writeln(i);
+            }
+        }
+    </script>
+  
+    <script language="javascript">
+        var n, temp, sum = 0, r;
+        n = parseInt(window.prompt("Enter n values"));
+        temp = n;
+        while (n > 0) {
+            r = parseInt(n % 10);
+            sum = sum * 10 + r;
+            n = parseInt(n / 10);
+        }
+        if (temp == sum) {
+            document.writeln("Palledram");
+        }
+        else {
+            document.writeln("NOT");
+        }
+    </script>
+     -->
+    <script language="javascript">
+        <p id="paragraph"></p>
+        ("paragraph").textContent = "Hello, World";
+        var element = document.createElement('p');
+        element.textContent = "Hello, World";
+        document.body.appendChild(element);//add the newly created element to the DOM
+        window.alert(Message);
+        window.alert('Hello, World');
+    </script>
+</head>
+
+<body>
+
+    <h1>Adding an element</h1>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: linear-gradient(rgba(0, 0, 0, 0, 8), rgba(0, 0, 0, 0, 4));
+        }
+
+        .calculator {
+            background-color: aqua;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0.4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 350px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        .display {
+            width: 250px;
+            min-height: 45px;
+            border: 1px solid rgba(0, 0, 0, 0, 2);
+            background: gray;
+            color: black;
+            text-align: end;
+            padding: 0 0.2rem;
+            font-size: 1.2rem;
+        }
+
+        .buttons {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 60px);
+            gap: 1px;
+        }
+
+        .buttons>button {
+            margin-top: 5px;
+            width: 60px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="display">0</div>
+        <div class="buttons"></div>
+    </div>
+    <script>
+        const buttons = document.querySelector(".buttons");
+        const display = document.querySelector(".display");
+        let buttonsArr = [
+            7, 8, 9, "/", 4, 5, 6, "*", 1, 2, 3, "+", 0, ".", "-", "=", "%", "sin", "cos", "C",
+        ];
+        let valuesArr = [];
+        let cleanValues;
+        for (
+            let a = 0; a < buttonsArr.length; a++
+        ) {
+            let button = document.createElement("button");
+            button.textContent = buttonsArr[a];
+            buttons.appendChild(button);
+        }
+        let calcButtons = document.querySelectorAll(".buttons button");
+        calcButtons.forEach(
+            (item) => {
+                item.addEventListener("click", (e) => {
+                    calculateArr(e.target.textContent)
+                });
+            });
+        let calculateArr = (value => {
+            if (value === "C") {
+                valuesArr = [];
+                display.textContent = 0;
+                return;
+            }
+            if (value != "=") {
+                valuesArr.push(value);
+                cleanValues = valuesArr.join("");
+                display.textContent = cleanValues;
+            }
+            else {
+                let result = eval(cleanValues);
+                display.textContent = result;
+                valuesArr=[];
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>
